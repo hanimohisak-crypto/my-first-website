@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hana Café | Cozy Luxury Coffee & Sweet Treats in Nairobi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display for Serif Headers & Plus Jakarta Sans for Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ivory': '#FAF6F0',
+                        'ivory-light': '#FFFDF9',
+                        'ivory-dark': '#EFE7DC',
+                        'cherry': '#C8102E',
+                        'cherry-dark': '#8E0018',
+                        'cherry-soft': '#FAF0F2',
+                        'honey': '#D4AF37',
+                        'honey-light': '#F3E5AB',
+                        'honey-gold': '#E5A93C',
+                        'espresso': '#3D2314',
+                        'espresso-light': '#5A3E2B',
+                        'warm-gray': '#8C827A'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 30px -10px rgba(61, 35, 20, 0.08)',
+                        'hover': '0 20px 40px -15px rgba(200, 16, 46, 0.15)',
+                        'glow': '0 0 25px rgba(212, 175, 55, 0.25)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF6F0;
+            color: #3D2314;
+        }
+
+        h1, h2, h3, h4, .font-serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF6F0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C8102E;
+        }
+
+        /* Float animation for decorative cards */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(1deg); }
+        }
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        /* Toast animation */
+        @keyframes slideInUp {
+            from { transform: translateY(100%) translateX(-50%); opacity: 0; }
+            to { transform: translateY(0) translateX(-50%); opacity: 1; }
+        }
+        .animate-toast {
+            animation: slideInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Glassmorphism support */
+        .glass-nav {
+            background: rgba(255, 253, 249, 0.90);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-ivory text-espresso antialiased selection:bg-cherry selection:text-white relative">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-cherry text-white text-xs md:text-sm py-2 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-2">
+        <span>🌸 Visit our flagship café in Kilimani, Nairobi | Free delivery in Westlands & Kilimani on orders over KES 2,500! 🍯</span>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 glass-nav border-b border-honey/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-full bg-cherry/10 border border-cherry/30 flex items-center justify-center group-hover:bg-cherry group-hover:text-white transition-all duration-300 text-cherry">
+                    <i class="fa-solid fa-fan text-lg group-hover:rotate-45 transition-transform duration-300"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-2xl md:text-2xl font-bold tracking-tight text-espresso flex items-center gap-1">
+                        Hana <span class="text-cherry text-xs font-sans tracking-widest uppercase border border-cherry/30 px-1.5 py-0.5 rounded-full ml-1">Café</span>
+                    </span>
+                    <span class="block text-[10px] text-warm-gray tracking-wider uppercase font-medium -mt-1">Nairobi's Floral Sanctuary</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#home" class="text-espresso hover:text-cherry transition-colors duration-200 py-1 border-b-2 border-transparent hover:border-cherry">Home</a>
+                <a href="#menu" class="text-espresso hover:text-cherry transition-colors duration-200 py-1 border-b-2 border-transparent hover:border-cherry">Menu</a>
+                <a href="#about" class="text-espresso hover:text-cherry transition-colors duration-200 py-1 border-b-2 border-transparent hover:border-cherry">About Us</a>
+                <a href="#reviews" class="text-espresso hover:text-cherry transition-colors duration-200 py-1 border-b-2 border-transparent hover:border-cherry">Reviews</a>
+                <a href="#contact" class="text-espresso hover:text-cherry transition-colors duration-200 py-1 border-b-2 border-transparent hover:border-cherry">Location & Hours</a>
+            </nav>
+
+            <!-- Action Buttons & Cart -->
+            <div class="flex items-center gap-4">
+                <!-- Cart Trigger Button -->
+                <button id="open-cart-btn" onclick="toggleCartModal()" class="relative p-2.5 rounded-full bg-ivory-dark text-espresso hover:text-cherry hover:bg-cherry-soft transition-all duration-200 focus:outline-none" aria-label="View Shopping Order">
+                    <i class="fa-solid fa-basket-shopping text-lg"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-cherry text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-ivory">0</span>
+                </button>
+
+                <!-- Reservation/Order CTA -->
+                <a href="#menu" class="hidden sm:inline-flex items-center gap-2 bg-cherry hover:bg-cherry-dark text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+                    <span>Order Now</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+
+                <!-- Mobile Hamburger Toggle -->
+                <button id="mobile-menu-btn" onclick="toggleMobileNav()" class="md:hidden p-2 rounded-lg text-espresso hover:bg-ivory-dark focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-nav" class="hidden md:hidden bg-ivory-light border-b border-honey/20 px-4 pt-3 pb-6 space-y-3 transition-all">
+            <a href="#home" onclick="toggleMobileNav()" class="block py-2 text-espresso font-medium border-b border-ivory-dark">Home</a>
+            <a href="#menu" onclick="toggleMobileNav()" class="block py-2 text-espresso font-medium border-b border-ivory-dark">Menu</a>
+            <a href="#about" onclick="toggleMobileNav()" class="block py-2 text-espresso font-medium border-b border-ivory-dark">About Us</a>
+            <a href="#reviews" onclick="toggleMobileNav()" class="block py-2 text-espresso font-medium border-b border-ivory-dark">Reviews</a>
+            <a href="#contact" onclick="toggleMobileNav()" class="block py-2 text-espresso font-medium border-b border-ivory-dark">Location & Hours</a>
+            <div class="pt-2">
+                <a href="#menu" onclick="toggleMobileNav()" class="w-full text-center block bg-cherry text-white font-semibold py-3 rounded-full shadow">
+                    Order Online Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden pt-12 pb-20 md:py-24">
+        <!-- Subtle Floral Decorative Background Elements -->
+        <div class="absolute -top-10 -right-10 w-96 h-96 bg-cherry/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -left-20 w-80 h-80 bg-honey/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Hero Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-honey/15 text-espresso border border-honey/30 text-xs md:text-sm font-semibold tracking-wide">
+                        <i class="fa-solid fa-sparkles text-honey-gold"></i>
+                        <span>Welcome to Hana Café Nairobi</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-espresso leading-[1.15]">
+                        Sip Softness, <br>
+                        <span class="text-cherry italic font-normal">Taste Sweetness</span> & Bloom at Hana.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-espresso-light max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Step into Hana Café, a warm, feminine sanctuary in Kilimani. Experience 100% Kenyan specialty coffee, velvet matcha, homemade strawberry lattes, and fresh artisanal pastries daily.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#menu" class="w-full sm:w-auto text-center bg-cherry hover:bg-cherry-dark text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-hover transition-all duration-300 flex items-center justify-center gap-3 group">
+                            <span>Explore Sweet Menu</span>
+                            <i class="fa-solid fa-mug-hot group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#reservation-section" class="w-full sm:w-auto text-center bg-white hover:bg-ivory-dark text-espresso border border-honey/40 font-semibold px-8 py-4 rounded-full shadow-sm hover:shadow transition-all duration-300 flex items-center justify-center gap-2">
+                            <i class="fa-regular fa-calendar-check text-cherry"></i>
+                            <span>Reserve Table</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Highlights -->
+                    <div class="pt-8 border-t border-honey/20 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 text-center">
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-cherry">100%</p>
+                            <p class="text-xs text-warm-gray font-medium">Kenyan Arabica Beans</p>
+                        </div>
+                        <div class="border-x border-honey/20 px-2">
+                            <p class="font-serif text-2xl font-bold text-cherry">Fresh</p>
+                            <p class="text-xs text-warm-gray font-medium">Daily In-House Bakery</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-cherry">4.9 ★</p>
+                            <p class="text-xs text-warm-gray font-medium">Over 1,200+ Reviews</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Image Collage & Floating Cards -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Main Hero Featured Image with Gold Frame -->
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] bg-ivory-dark">
+                            <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?q=80&w=1000&auto=format&fit=crop" 
+                                 alt="Honey Bloom Cafe Cozy Aesthetic Interior & Latte" 
+                                 class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                                 onerror="this.src='https://placehold.co/800x1000/3D2314/FAF6F0?text=Honey+Bloom+Caf%C3%A9'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-espresso/40 via-transparent to-transparent"></div>
+                        </div>
+
+                        <!-- Floating Card 1: Bestseller Drink -->
+                        <div class="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-honey/20 hidden sm:flex items-center gap-3 animate-float max-w-xs">
+                            <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?q=80&w=200&auto=format&fit=crop" alt="Hana Signature Latte" class="w-14 h-14 rounded-xl object-cover">
+                            <div>
+                                <span class="text-[10px] uppercase tracking-wider font-bold text-cherry bg-cherry-soft px-2 py-0.5 rounded-full">Top Favorite</span>
+                                <h4 class="font-serif font-bold text-sm text-espresso mt-0.5">Hana Blossom Latte</h4>
+                                <p class="text-xs font-semibold text-honey-gold">KES 420</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge: Floral Cafe Vibe -->
+                        <div class="absolute -top-4 -right-4 bg-cherry text-white p-4 rounded-2xl shadow-xl flex items-center justify-center text-center rotate-6 hover:rotate-0 transition-transform">
+                            <div>
+                                <i class="fa-solid fa-heart text-xl text-honey-light mb-1"></i>
+                                <p class="text-xs font-bold leading-tight">Cozy & Floral<br>Atmosphere</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Highlights Strip -->
+    <section class="py-8 bg-ivory-light border-y border-honey/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="flex items-center justify-center gap-3 p-2">
+                    <div class="w-10 h-10 rounded-full bg-honey/15 text-honey-gold flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <div class="text-left">
+                        <h4 class="font-semibold text-sm text-espresso">Organic & Fresh</h4>
+                        <p class="text-xs text-warm-gray">Ethical Kenyan Beans</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center gap-3 p-2">
+                    <div class="w-10 h-10 rounded-full bg-cherry/10 text-cherry flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+                    <div class="text-left">
+                        <h4 class="font-semibold text-sm text-espresso">Baked Daily</h4>
+                        <p class="text-xs text-warm-gray">In-House Pastry Chef</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center gap-3 p-2">
+                    <div class="w-10 h-10 rounded-full bg-honey/15 text-honey-gold flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <div class="text-left">
+                        <h4 class="font-semibold text-sm text-espresso">Cozy Workspace</h4>
+                        <p class="text-xs text-warm-gray">High-Speed Free Wi-Fi</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center gap-3 p-2">
+                    <div class="w-10 h-10 rounded-full bg-cherry/10 text-cherry flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <div class="text-left">
+                        <h4 class="font-semibold text-sm text-espresso">Fast Delivery</h4>
+                        <p class="text-xs text-warm-gray">Hot & Cold to Doorstep</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Menu Section -->
+    <section id="menu" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+            <span class="text-cherry font-semibold text-sm uppercase tracking-widest">Handcrafted Delights</span>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-espresso">Our Delicious Menu</h2>
+            <p class="text-warm-gray text-sm sm:text-base">Indulge in sweet luxury. From signature golden honey coffees to freshly baked artisan treats, every item is crafted with love.</p>
+        </div>
+
+        <!-- Filter Category Tabs & Search Bar -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 bg-white/70 p-1.5 rounded-2xl border border-honey/20 shadow-sm w-full md:w-auto">
+                <button onclick="filterMenu('all')" class="menu-tab active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 bg-cherry text-white shadow-sm" data-category="all">
+                    All Items
+                </button>
+                <button onclick="filterMenu('coffee')" class="menu-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 text-espresso hover:text-cherry hover:bg-cherry-soft" data-category="coffee">
+                    Signature Coffee
+                </button>
+                <button onclick="filterMenu('matcha')" class="menu-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 text-espresso hover:text-cherry hover:bg-cherry-soft" data-category="matcha">
+                    Matcha & Tea
+                </button>
+                <button onclick="filterMenu('shakes')" class="menu-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 text-espresso hover:text-cherry hover:bg-cherry-soft" data-category="shakes">
+                    Shakes & Smoothies
+                </button>
+                <button onclick="filterMenu('treats')" class="menu-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 text-espresso hover:text-cherry hover:bg-cherry-soft" data-category="treats">
+                    Sweet Treats & Bakery
+                </button>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="relative w-full md:w-72">
+                <input type="text" id="menu-search" onkeyup="searchMenu()" placeholder="Search drinks or treats..." class="w-full bg-white border border-honey/30 rounded-full py-2.5 pl-10 pr-4 text-sm text-espresso focus:outline-none focus:border-cherry focus:ring-2 focus:ring-cherry/20 transition-all">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-warm-gray text-sm"></i>
+            </div>
+        </div>
+
+        <!-- Menu Grid Container -->
+        <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Menu Cards dynamically inserted or loaded here -->
+        </div>
+
+        <!-- Empty Search Result State -->
+        <div id="no-results" class="hidden text-center py-16">
+            <div class="w-16 h-16 bg-cherry-soft text-cherry rounded-full flex items-center justify-center mx-auto text-2xl mb-3">
+                <i class="fa-solid fa-cookie-bite"></i>
+            </div>
+            <h3 class="font-serif font-bold text-lg text-espresso">No delicious items found</h3>
+            <p class="text-sm text-warm-gray mt-1">Try searching for something else like "latte", "cinnamon", or "matcha".</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-ivory-light border-y border-honey/20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Aesthetic Image Stack -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop" 
+                             alt="Inside Honey Bloom Cafe Atmosphere" 
+                             class="w-full h-[420px] object-cover"
+                             onerror="this.src='https://placehold.co/800x600/3D2314/FAF6F0?text=About+Honey+Bloom'">
+                    </div>
+                    <div class="absolute -bottom-8 -right-4 w-48 sm:w-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden sm:block">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=400&auto=format&fit=crop" alt="Pouring Coffee" class="w-full h-40 object-cover">
+                    </div>
+                </div>
+
+                <!-- Right Narrative Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-cherry font-semibold text-sm uppercase tracking-widest">Our Story</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-espresso leading-tight">
+                        Hana Café: A Haven Born Out of Love for Exceptional Coffee & Sweet Moments
+                    </h2>
+                    <p class="text-espresso-light leading-relaxed text-sm sm:text-base">
+                        Founded in the heart of Nairobi, <strong>Hana Café</strong> (inspired by "Hana" - the Japanese word for flower) was created as a gentle, elegant space where friends gather, ideas blossom, and every sip feels like a warm hug. 
+                    </p>
+                    <p class="text-espresso-light leading-relaxed text-sm sm:text-base">
+                        We blend premium single-origin Kenyan Arabica beans from local highlands with handcrafted organic honey syrups and French-inspired baking techniques. Whether you're working on your laptop, taking photos with our blossom wall, or sharing a cheesecake slice with loved ones, Hana is your cozy home away from home.
+                    </p>
+                    <p class="text-espresso-light leading-relaxed text-sm sm:text-base">
+                        We blend premium single-origin Kenyan Arabica beans from local highlands with handcrafted organic honey syrups and French-inspired baking techniques. Whether you're working on your laptop, taking photos with our blossom wall, or sharing a cheesecake slice with loved ones, Honey Bloom is your cozy home away from home.
+                    </p>
+
+                    <!-- Core Values Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                        <div class="bg-white p-4 rounded-2xl border border-honey/20 shadow-sm">
+                            <i class="fa-solid fa-heart text-cherry text-xl mb-2"></i>
+                            <h4 class="font-serif font-bold text-sm text-espresso">Made with Love</h4>
+                            <p class="text-xs text-warm-gray mt-1">Handcrafted drinks and pastries everyday.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-honey/20 shadow-sm">
+                            <i class="fa-solid fa-seedling text-honey-gold text-xl mb-2"></i>
+                            <h4 class="font-serif font-bold text-sm text-espresso">Local Sourcing</h4>
+                            <p class="text-xs text-warm-gray mt-1">100% Kenyan coffee beans & dairy.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-honey/20 shadow-sm">
+                            <i class="fa-solid fa-camera text-cherry text-xl mb-2"></i>
+                            <h4 class="font-serif font-bold text-sm text-espresso">Insta-Worthy</h4>
+                            <p class="text-xs text-warm-gray mt-1">Aesthetic bloom walls and presentation.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14 space-y-2">
+            <span class="text-cherry font-semibold text-sm uppercase tracking-widest">Sweet Words</span>
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-espresso">Loved by Nairobi's Coffee Lovers</h2>
+            <p class="text-warm-gray text-sm">Read what our wonderful guests have to say about their Honey Bloom experience.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Review Card 1 -->
+            <div class="bg-white p-6 rounded-3xl border border-honey/20 shadow-sm hover:shadow-md transition-shadow relative">
+                <div class="text-honey-gold text-sm mb-3">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-espresso-light text-sm italic mb-6">"The Hana Blossom Latte is genuinely the best iced coffee I have had in Nairobi! The cherry pink interior is so aesthetic for catching up with girlfriends."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-cherry/20 text-cherry font-bold flex items-center justify-center text-sm">
+                        AW
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-espresso">Amina Wanjiku</h4>
+                        <p class="text-xs text-warm-gray">Regular Guest • Kilimani</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="bg-white p-6 rounded-3xl border border-honey/20 shadow-sm hover:shadow-md transition-shadow relative">
+                <div class="text-honey-gold text-sm mb-3">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-espresso-light text-sm italic mb-6">"Their warm cinnamon rolls with honey glaze are pure magic! Soft, fluffy, and perfectly sweet. Outstanding customer service and fast delivery too!"</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-honey/30 text-espresso font-bold flex items-center justify-center text-sm">
+                        CK
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-espresso">Clara Kilonzo</h4>
+                        <p class="text-xs text-warm-gray">Foodie & Blogger</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="bg-white p-6 rounded-3xl border border-honey/20 shadow-sm hover:shadow-md transition-shadow relative">
+                <div class="text-honey-gold text-sm mb-3">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-espresso-light text-sm italic mb-6">"Such a peaceful, feminine atmosphere to work remotely during weekdays. High-speed Wi-Fi and their Matcha Latte is heavenly."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-cherry/20 text-cherry font-bold flex items-center justify-center text-sm">
+                        NM
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-espresso">Njeri Mwangi</h4>
+                        <p class="text-xs text-warm-gray">Freelance Designer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location, Hours & Table Reservation Section -->
+    <section id="contact" class="py-20 bg-ivory-light border-t border-honey/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="reservation-section" class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact & Hours Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-cherry font-semibold text-sm uppercase tracking-widest">Visit Us</span>
+                        <h2 class="text-3xl font-serif font-bold text-espresso mt-1">Location & Café Hours</h2>
+                        <p class="text-warm-gray text-sm mt-2">Come spend a sweet morning or afternoon with us in Nairobi!</p>
+                    </div>
+
+                    <!-- Info Cards -->
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-honey/20 shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-cherry/10 text-cherry flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm text-espresso">Address</h4>
+                                <p class="text-xs text-warm-gray mt-0.5">Argwings Kodhek Road, Rose Avenue Junction, Kilimani, Nairobi, Kenya</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-honey/20 shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-honey/15 text-honey-gold flex items-center justify-center shrink-0">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm text-espresso">Opening Hours</h4>
+                                <p class="text-xs text-warm-gray mt-0.5">Monday – Friday: 7:00 AM – 8:30 PM</p>
+                                <p class="text-xs text-warm-gray">Saturday – Sunday: 8:00 AM – 9:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-honey/20 shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-cherry/10 text-cherry flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm text-espresso">Phone & WhatsApp Orders</h4>
+                                <p class="text-xs text-warm-gray mt-0.5">+254 712 345 678 / +254 798 654 321</p>
+                                <a href="https://wa.me/254712345678" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-emerald-600 font-bold mt-1 hover:underline">
+                                    <i class="fa-brands fa-whatsapp"></i> Direct WhatsApp Order
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Card Frame -->
+                    <div class="rounded-2xl overflow-hidden border border-honey/20 shadow-sm bg-white p-3 text-center">
+                        <div class="bg-ivory h-32 rounded-xl flex items-center justify-center flex-col gap-2 border border-dashed border-honey/40">
+                            <i class="fa-solid fa-map-location-dot text-2xl text-cherry"></i>
+                            <span class="text-xs font-semibold text-espresso">Interactive Map Preview (Kilimani, Nairobi)</span>
+                            <span class="text-[10px] text-warm-gray">Near Yaya Centre & Rose Ave</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table Reservation Form -->
+                <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-honey/20 shadow-lg">
+                    <span class="text-cherry font-semibold text-xs uppercase tracking-widest">Book Your Cozy Corner</span>
+                    <h3 class="text-2xl font-serif font-bold text-espresso mb-6">Reserve a Table</h3>
+
+                    <form id="reservation-form" onsubmit="handleReservation(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-espresso mb-1">Full Name</label>
+                                <input type="text" required placeholder="e.g. Jane Doe" class="w-full bg-ivory border border-honey/30 rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:border-cherry">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-espresso mb-1">Phone Number</label>
+                                <input type="tel" required placeholder="07XX XXX XXX" class="w-full bg-ivory border border-honey/30 rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:border-cherry">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-espresso mb-1">Date</label>
+                                <input type="date" required class="w-full bg-ivory border border-honey/30 rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:border-cherry">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-espresso mb-1">Time</label>
+                                <select required class="w-full bg-ivory border border-honey/30 rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:border-cherry">
+                                    <option value="">Select time</option>
+                                    <option>09:00 AM</option>
+                                    <option>11:00 AM</option>
+                                    <option>01:00 PM</option>
+                                    <option>03:00 PM</option>
+                                    <option>05:00 PM</option>
+                                    <option>07:00 PM</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-espresso mb-1">Guests</label>
+                                <select required class="w-full bg-ivory border border-honey/30 rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:border-cherry">
+                                    <option>1 Person</option>
+                                    <option selected>2 People</option>
+                                    <option>3-4 People</option>
+                                    <option>5+ People (Group)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-espresso mb-1">Special Requests / Seating Preference</label>
+                            <textarea rows="3" placeholder="e.g., Garden floral booth, birthday celebration, high chair needed..." class="w-full bg-ivory border border-honey/30 rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:border-cherry"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-cherry hover:bg-cherry-dark text-white font-semibold py-3.5 rounded-xl shadow-md transition-all duration-200 text-sm flex items-center justify-center gap-2">
+                            <i class="fa-regular fa-paper-plane"></i>
+                            <span>Confirm Table Reservation</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Slide-over Modal -->
+    <div id="cart-modal" class="fixed inset-0 z-50 hidden overflow-hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div onclick="toggleCartModal()" class="fixed inset-0 bg-espresso/40 backdrop-blur-sm transition-opacity"></div>
+
+        <div class="fixed inset-y-0 right-0 pl-10 max-w-full flex">
+            <div class="w-screen max-w-md bg-ivory-light shadow-2xl flex flex-col border-l border-honey/20">
+                
+                <!-- Modal Header -->
+                <div class="p-6 bg-white border-b border-honey/20 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-basket-shopping text-cherry text-xl"></i>
+                        <h3 class="font-serif font-bold text-lg text-espresso">Your Sweet Order</h3>
+                    </div>
+                    <button onclick="toggleCartModal()" class="text-warm-gray hover:text-espresso p-1">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Modal Body: Cart Items List -->
+                <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4">
+                    <!-- Dynamic cart items rendered via JavaScript -->
+                </div>
+
+                <!-- Modal Footer & Checkout -->
+                <div class="p-6 bg-white border-t border-honey/20 space-y-4">
+                    <div class="space-y-1.5 text-sm">
+                        <div class="flex justify-between text-warm-gray">
+                            <span>Subtotal</span>
+                            <span id="cart-subtotal" class="font-semibold text-espresso">KES 0</span>
+                        </div>
+                        <div class="flex justify-between text-warm-gray">
+                            <span>Estimated Delivery (Nairobi)</span>
+                            <span id="cart-delivery" class="font-semibold text-espresso">KES 200</span>
+                        </div>
+                        <div class="flex justify-between text-base font-serif font-bold text-espresso pt-2 border-t border-honey/20">
+                            <span>Total</span>
+                            <span id="cart-total" class="text-cherry font-sans">KES 0</span>
+                        </div>
+                    </div>
+
+                    <button onclick="handleCheckout()" class="w-full bg-cherry hover:bg-cherry-dark text-white font-semibold py-3.5 rounded-full shadow transition-all duration-200 text-sm flex items-center justify-center gap-2">
+                        <span>Proceed to MPESA Checkout</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+
+                    <p class="text-[11px] text-center text-warm-gray flex items-center justify-center gap-1">
+                        <i class="fa-solid fa-shield-halved text-emerald-600"></i> Secure Payment via M-PESA / Card
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-espresso text-ivory py-16 border-t-4 border-cherry">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-espresso-light">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <a href="#home" class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-cherry text-white flex items-center justify-center text-sm font-bold">
+                            <i class="fa-solid fa-fan"></i>
+                        </div>
+                        <span class="font-serif text-xl font-bold text-white">Hana Café</span>
+                    </a>
+                    <p class="text-warm-gray text-xs leading-relaxed">
+                        Nairobi's favorite cozy, feminine sanctuary for specialty Kenyan brews, matcha delights, and daily fresh artisan treats.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-full bg-espresso-light text-ivory hover:bg-cherry hover:text-white transition-colors flex items-center justify-center text-xs"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-espresso-light text-ivory hover:bg-cherry hover:text-white transition-colors flex items-center justify-center text-xs"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-espresso-light text-ivory hover:bg-cherry hover:text-white transition-colors flex items-center justify-center text-xs"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="font-serif font-bold text-sm text-honey-light mb-4 uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-xs text-warm-gray">
+                        <li><a href="#home" class="hover:text-cherry transition-colors">Home Experience</a></li>
+                        <li><a href="#menu" class="hover:text-cherry transition-colors">Our Full Menu</a></li>
+                        <li><a href="#about" class="hover:text-cherry transition-colors">Our Story & Ethos</a></li>
+                        <li><a href="#contact" class="hover:text-cherry transition-colors">Book a Table</a></li>
+                        <li><a href="#contact" class="hover:text-cherry transition-colors">Delivery Options</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Popular Categories -->
+                <div>
+                    <h4 class="font-serif font-bold text-sm text-honey-light mb-4 uppercase tracking-wider">Favorites</h4>
+                    <ul class="space-y-2 text-xs text-warm-gray">
+                        <li><a href="#menu" onclick="filterMenu('coffee')" class="hover:text-cherry transition-colors">Hana Blossom Latte</a></li>
+                        <li><a href="#menu" onclick="filterMenu('matcha')" class="hover:text-cherry transition-colors">Cherry Blossom Matcha</a></li>
+                        <li><a href="#menu" onclick="filterMenu('treats')" class="hover:text-cherry transition-colors">Honey Glazed Cinnamon Rolls</a></li>
+                        <li><a href="#menu" onclick="filterMenu('shakes')" class="hover:text-cherry transition-colors">Strawberry Shortcake Shake</a></li>
+                        <li><a href="#menu" onclick="filterMenu('treats')" class="hover:text-cherry transition-colors">Berry Bliss Cheesecake</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Sweet Newsletter -->
+                <div>
+                    <h4 class="font-serif font-bold text-sm text-honey-light mb-4 uppercase tracking-wider">Join The Hana Club</h4>
+                    <p class="text-xs text-warm-gray mb-3">Subscribe for secret menu previews & 10% off your first online order!</p>
+                    <form onsubmit="handleNewsletter(event)" class="space-y-2">
+                        <input type="email" required placeholder="Enter your email" class="w-full bg-espresso-light text-white text-xs rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-1 focus:ring-cherry border border-espresso-light">
+                        <button type="submit" class="w-full bg-cherry hover:bg-cherry-dark text-white font-semibold py-2.5 rounded-xl text-xs transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-warm-gray gap-4">
+                <p>&copy; 2026 Hana Café Nairobi. All Rights Reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                    <a href="#" class="hover:underline">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast Container -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-espresso text-white px-5 py-3 rounded-2xl shadow-2xl border border-honey/30 items-center gap-3 animate-toast">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-honey-gold text-lg"></i>
+        <span id="toast-msg" class="text-xs sm:text-sm font-medium">Item added to your order!</span>
+    </div>
+
+    <script>
+        // Menu Dataset with affordable prices in KES
+        const menuItems = [
+            {
+                id: 1,
+                name: "Hana Blossom Latte",
+                category: "coffee",
+                price: 420,
+                tag: "Bestseller",
+                image: "https://images.unsplash.com/photo-1534778101976-62847782c213?q=80&w=600&auto=format&fit=crop",
+                description: "Kenyan espresso infused with pure organic honeycomb nectar & velvety steamed milk."
+            },
+            {
+                id: 2,
+                name: "Cherry Blossom Matcha Latte",
+                category: "matcha",
+                price: 450,
+                tag: "Chef's Special",
+                image: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?q=80&w=600&auto=format&fit=crop",
+                description: "Grade-A Uji matcha layered with subtle cherry blossom essence and oat milk."
+            },
+            {
+                id: 3,
+                name: "Strawberry Shortcake Shake",
+                category: "shakes",
+                price: 480,
+                tag: "Sweet Favorite",
+                image: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=600&auto=format&fit=crop",
+                description: "Blended fresh Naivasha strawberries, vanilla bean gelato & whipped cream crown."
+            },
+            {
+                id: 4,
+                name: "Velvet Hot Chocolate",
+                category: "coffee",
+                price: 380,
+                tag: "Cozy Classic",
+                image: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?q=80&w=600&auto=format&fit=crop",
+                description: "Rich dark Belgian chocolate melted in creamy milk with toasted marshmallows."
+            },
+            {
+                id: 5,
+                name: "Iced Vanilla Bean Cold Brew",
+                category: "coffee",
+                price: 390,
+                tag: "Refreshing",
+                image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=600&auto=format&fit=crop",
+                description: "12-hour steeped cold brew coffee served over ice with Madagascar vanilla cream."
+            },
+            {
+                id: 6,
+                name: "Honey Glazed Cinnamon Roll",
+                category: "treats",
+                price: 320,
+                tag: "Freshly Baked",
+                image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop",
+                description: "Warm, fluffy cinnamon roll topped with rich honey cream cheese frosting."
+            },
+            {
+                id: 7,
+                name: "Berry Bliss Cheesecake Slice",
+                category: "treats",
+                price: 450,
+                tag: "Popular",
+                image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=600&auto=format&fit=crop",
+                description: "Creamy New York cheesecake topped with fresh wild berry compote."
+            },
+            {
+                id: 8,
+                name: "Red Velvet Hana Cupcake",
+                category: "treats",
+                price: 280,
+                tag: "Cute Choice",
+                image: "https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?q=80&w=600&auto=format&fit=crop",
+                description: "Soft cocoa sponge filled with vanilla buttercream & edible flower petaling."
+            },
+            {
+                id: 9,
+                name: "Butter Croissant & Berry Jam",
+                category: "treats",
+                price: 250,
+                tag: "Bakery Classic",
+                image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop",
+                description: "Flaky golden French butter croissant served warm with house-made berry jam."
+            },
+            {
+                id: 10,
+                name: "Hana Honeycomb Layer Cake",
+                category: "treats",
+                price: 490,
+                tag: "Signature",
+                image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop",
+                description: "Layered sponge cake with caramel honey mousse and crunchy honeycomb candy."
+            },
+            {
+                id: 11,
+                name: "Mango Passion Tropics Smoothie",
+                category: "shakes",
+                price: 420,
+                tag: "New",
+                image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?q=80&w=600&auto=format&fit=crop",
+                description: "Real Kenyan coastal mangoes, passion fruit juice, and Greek yogurt smoothie."
+            },
+            {
+                id: 12,
+                name: "Rose Iced Tea & Honey",
+                category: "matcha",
+                price: 350,
+                tag: "Floral Refresh",
+                image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=600&auto=format&fit=crop",
+                description: "Steeped organic red rose petals with clear lemon citrus and natural honey."
+            }
+        ];
+
+        // Application State
+        let cart = [];
+        let activeCategory = 'all';
+
+        // Initialize menu on DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMenu(menuItems);
+            updateCartUI();
+        });
+
+        // Render Menu Cards
+        function renderMenu(items) {
+            const grid = document.getElementById('menu-grid');
+            const noResults = document.getElementById('no-results');
+
+            if (items.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+
+            noResults.classList.add('hidden');
+            grid.innerHTML = items.map(item => `
+                <div class="bg-white rounded-3xl overflow-hidden border border-honey/20 shadow-sm hover:shadow-hover transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <!-- Image Container -->
+                        <div class="relative h-48 overflow-hidden bg-ivory-dark">
+                            <img src="${item.image}" 
+                                 alt="${item.name}" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/3D2314/FAF6F0?text=${encodeURIComponent(item.name)}'">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-cherry text-[10px] font-bold px-2.5 py-1 rounded-full border border-cherry/20 shadow-sm">
+                                ${item.tag}
+                            </span>
+                        </div>
+
+                        <!-- Card Content -->
+                        <div class="p-5">
+                            <div class="flex items-start justify-between gap-2 mb-1">
+                                <h3 class="font-serif font-bold text-base text-espresso leading-snug">${item.name}</h3>
+                                <span class="font-bold text-sm text-cherry whitespace-nowrap">KES ${item.price}</span>
+                            </div>
+                            <p class="text-xs text-warm-gray leading-relaxed">${item.description}</p>
+                        </div>
+                    </div>
+
+                    <!-- Add Button -->
+                    <div class="px-5 pb-5 pt-0">
+                        <button onclick="addToCart(${item.id})" class="w-full bg-ivory hover:bg-cherry hover:text-white text-espresso border border-honey/30 font-semibold py-2.5 rounded-2xl transition-all duration-200 text-xs flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-plus text-xs"></i>
+                            <span>Add to Order</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter by Category
+        function filterMenu(category) {
+            activeCategory = category;
+            
+            // Update active tab buttons styling
+            document.querySelectorAll('.menu-tab').forEach(btn => {
+                if (btn.dataset.category === category) {
+                    btn.classList.add('bg-cherry', 'text-white', 'shadow-sm');
+                    btn.classList.remove('text-espresso', 'hover:bg-cherry-soft');
+                } else {
+                    btn.classList.remove('bg-cherry', 'text-white', 'shadow-sm');
+                    btn.classList.add('text-espresso', 'hover:bg-cherry-soft');
+                }
+            });
+
+            const searchVal = document.getElementById('menu-search').value.toLowerCase();
+            applyFilterAndSearch(category, searchVal);
+        }
+
+        // Search Menu Input
+        function searchMenu() {
+            const searchVal = document.getElementById('menu-search').value.toLowerCase();
+            applyFilterAndSearch(activeCategory, searchVal);
+        }
+
+        function applyFilterAndSearch(category, search) {
+            let filtered = menuItems;
+            
+            if (category !== 'all') {
+                filtered = filtered.filter(item => item.category === category);
+            }
+
+            if (search.trim() !== '') {
+                filtered = filtered.filter(item => 
+                    item.name.toLowerCase().includes(search) || 
+                    item.description.toLowerCase().includes(search)
+                );
+            }
+
+            renderMenu(filtered);
+        }
+
+        // Add item to cart
+        function addToCart(itemId) {
+            const item = menuItems.find(i => i.id === itemId);
+            if (!item) return;
+
+            const existing = cart.find(c => c.id === itemId);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ ...item, quantity: 1 });
+            }
+
+            updateCartUI();
+            showToast(`Added "${item.name}" to your order!`);
+        }
+
+        // Update item quantity
+        function updateQuantity(itemId, delta) {
+            const index = cart.findIndex(c => c.id === itemId);
+            if (index > -1) {
+                cart[index].quantity += delta;
+                if (cart[index].quantity <= 0) {
+                    cart.splice(index, 1);
+                }
+            }
+            updateCartUI();
+        }
+
+        // Update Cart Header & Drawer UI
+        function updateCartUI() {
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const delivery = subtotal > 0 ? 200 : 0;
+            const total = subtotal + delivery;
+
+            // Update badge count
+            document.getElementById('cart-count').innerText = totalCount;
+
+            // Update modal totals
+            document.getElementById('cart-subtotal').innerText = `KES ${subtotal.toLocaleString()}`;
+            document.getElementById('cart-delivery').innerText = `KES ${delivery.toLocaleString()}`;
+            document.getElementById('cart-total').innerText = `KES ${total.toLocaleString()}`;
+
+            // Render modal cart list
+            const cartContainer = document.getElementById('cart-items-container');
+            if (cart.length === 0) {
+                cartContainer.innerHTML = `
+                    <div class="text-center py-12">
+                        <i class="fa-solid fa-basket-shopping text-4xl text-warm-gray/40 mb-3 block"></i>
+                        <p class="font-serif font-bold text-espresso">Your bag is empty</p>
+                        <p class="text-xs text-warm-gray mt-1">Explore our menu to add coffee or pastries.</p>
+                    </div>
+                `;
+            } else {
+                cartContainer.innerHTML = cart.map(item => `
+                    <div class="flex items-center gap-3 p-3 bg-white rounded-2xl border border-honey/20 shadow-sm">
+                        <img src="${item.image}" alt="${item.name}" class="w-14 h-14 rounded-xl object-cover shrink-0">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-espresso truncate">${item.name}</h4>
+                            <p class="text-xs text-cherry font-semibold mt-0.5">KES ${(item.price * item.quantity).toLocaleString()}</p>
+                        </div>
+                        <div class="flex items-center gap-2 bg-ivory px-2 py-1 rounded-xl border border-honey/20">
+                            <button onclick="updateQuantity(${item.id}, -1)" class="text-xs text-espresso hover:text-cherry px-1 font-bold">-</button>
+                            <span class="text-xs font-bold text-espresso">${item.quantity}</span>
+                            <button onclick="updateQuantity(${item.id}, 1)" class="text-xs text-espresso hover:text-cherry px-1 font-bold">+</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Toggle Cart Drawer
+        function toggleCartModal() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        // Toggle Mobile Nav
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobile-nav');
+            nav.classList.toggle('hidden');
+        }
+
+        // Handle Reservation Submission
+        function handleReservation(event) {
+            event.preventDefault();
+            showToast("Table reserved successfully! We look forward to blooming with you.");
+            event.target.reset();
+        }
+
+        // Handle Newsletter Submission
+        function handleNewsletter(event) {
+            event.preventDefault();
+            showToast("Welcome to The Hana Club! Check your inbox for your 10% discount code.");
+            event.target.reset();
+        }
+
+        // Handle Checkout Demo
+        function handleCheckout() {
+            if (cart.length === 0) {
+                showToast("Please add items to your cart before checking out!");
+                return;
+            }
+            showToast("Redirecting to M-PESA payment popup... Thank you!");
+            setTimeout(() => {
+                cart = [];
+                updateCartUI();
+                toggleCartModal();
+            }, 2000);
+        }
+
+        // Custom Notification Toast
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = message;
+            
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
